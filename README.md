@@ -29,25 +29,17 @@
 
     The model utilizes the following laws of probability to compute the likelihood of winning and losing.
 
-    $$
-    P(W| A, B, C, ... , Z) = \frac{P(W, A, B, C, ..., Z)}{P(A,B,C,...Z)}
-    $$
+    $P(W| A, B, C, ... , Z) = \frac{P(W, A, B, C, ..., Z)}{P(A,B,C,...Z)}$
 
-    $$
-    = \frac{P(A,B,C, ... Z | W)P(W)}{P(A,B,C,...Z)}
-    $$
+    $= \frac{P(A,B,C, ... Z | W)P(W)}{P(A,B,C,...Z)}$
 
     Because A,B,C, ...Z are given to be conditionally independent given W by the structure of a naive bayes classifier:
 
-    $$
-    = \frac{P(A|W)P(B|W)P(C|W)...P(Z|W)P(W)}{P(A,B,C,...Z)}
-    $$
+    $= \frac{P(A|W)P(B|W)P(C|W)...P(Z|W)P(W)}{P(A,B,C,...Z)}$
 
     The same can be done for losing data:
 
-    $$
-    P(L| A, B, C, ... Z)= \frac{P(A|L)P(B|L)P(C|L)...P(Z|L)P(L)}{P(A,B,C,...Z)}
-    $$
+    $P(L| A, B, C, ... Z)= \frac{P(A|L)P(B|L)P(C|L)...P(Z|L)P(L)}{P(A,B,C,...Z)}$
 
     Once both the probability of winning given the evidence, and the probability of losing given the evidence are both calculated, you can compare the two values and the higher value indicates the more likely event and the choice by the classifier. As the term $P(A,B,C,...Z)$ is in the denominator of both formulas, this probability can be omitted from both calculations.
 
